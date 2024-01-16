@@ -4,7 +4,7 @@ import classes from './index.module.scss';
 
 export default Button.extend({
   defaultProps: {
-    size: 'md',
+    size: 'sm',
   },
   classNames: {
     root: classes.root,

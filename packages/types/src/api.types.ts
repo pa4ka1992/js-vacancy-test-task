@@ -34,4 +34,4 @@ export type ValidationErrors = {
   [name: string]: string[] | string;
 };
 
-export { Next, Template };
+export { type Next, Template };

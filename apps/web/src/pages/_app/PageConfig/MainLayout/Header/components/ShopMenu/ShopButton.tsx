@@ -24,11 +24,9 @@ const ShopButton: FC<Props> = ({ label, path }) => {
       underline={false}
     >
       <Button
-        size="md"
-        c={isActive ? 'black' : 'asphalt'}
-        color="asphalt"
-        variant={isActive ? 'light' : 'subtle'}
-        fz="sm"
+        c={isActive ? 'black' : 'asphalt.8'}
+        color={isActive ? 'asphalt' : 'asphalt.8'}
+        variant={isActive ? 'filled' : 'subtle'}
         radius="xl"
       >
         {label}
