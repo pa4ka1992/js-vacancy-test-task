@@ -41,7 +41,7 @@ interface UsersListParams {
   };
 }
 
-const Home: NextPage = () => {
+const Marketplace: NextPage = () => {
   const [search, setSearch] = useInputState('');
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
   const [sorting, setSorting] = useState<SortingState>([]);
@@ -200,4 +200,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Marketplace;

@@ -29,5 +29,8 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  sassOptions: {
+    prependData: '@import "./_mantine.scss";',
+  },
   transpilePackages: ['types', 'schemas', 'app-constants'],
 };

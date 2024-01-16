@@ -8,10 +8,10 @@ import { RoutePath } from 'routes';
 
 import { LogoImage } from 'public/images';
 
-import UserMenu from './components/UserMenu';
-import ShadowLoginBanner from './components/ShadowLoginBanner';
+import ShopMenu from './components/ShopMenu';
+import AccountMenu from './components/AccountMenu';
 
-import classes from './index.module.css';
+import classes from './index.module.scss';
 
 const Header: FC = () => {
   const { data: account } = accountApi.useGet();
@@ -19,20 +19,13 @@ const Header: FC = () => {
   if (!account) return null;
 
   return (
-    <LayoutHeader>
-      {account.isShadow && <ShadowLoginBanner email={account.email} />}
-      <Container
-        className={classes.header}
-        mih={72}
-        px={32}
-        py={0}
-        display="flex"
-        fluid
-      >
-        <Link type="router" href={RoutePath.Home}>
+    <LayoutHeader withBorder={false}>
+      <Container className={classes.header} mih={70} px={48} py={0} display="flex" fluid>
+        <Link type="router" href={RoutePath.Marketplace} underline={false}>
           <LogoImage />
         </Link>
-        <UserMenu />
+        <ShopMenu />
+        <AccountMenu />
       </Container>
     </LayoutHeader>
   );

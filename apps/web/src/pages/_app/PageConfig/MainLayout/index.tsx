@@ -4,7 +4,7 @@ import { AppShell } from '@mantine/core';
 import Header from './Header';
 import Footer from './Footer';
 
-import classes from './MainLayout.module.css';
+import classes from './MainLayout.module.scss';
 
 interface MainLayoutProps {
   children: ReactElement;
@@ -12,12 +12,9 @@ interface MainLayoutProps {
 
 const MainLayout: FC<MainLayoutProps> = ({ children }) => (
   <AppShell
-    header={{ height: 72 }}
+    header={{ height: 70 }}
     footer={{ height: 40 }}
-    classNames={{
-      root: classes.root,
-      main: classes.main,
-    }}
+    classNames={classes}
   >
     <Header />
 
