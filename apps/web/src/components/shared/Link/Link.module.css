@@ -2,13 +2,13 @@
   display: flex;
   gap: 5px;
 
-  color: var(--mantine-color-blue-5);
+  /* color: var(--mantine-color-blue-5);
 
   pointer-events: initial;
 
   &:hover {
     color: var(--mantine-color-blue-2);
-  }
+  } */
 }
 
 .disabled {

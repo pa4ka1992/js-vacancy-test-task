@@ -11,7 +11,7 @@ interface MainLayoutProps {
 
 const MainLayout: FC<MainLayoutProps> = ({ children }) => (
   <AppShell
-    header={{ height: 70 }}
+    header={{ height: 80 }}
     classNames={classes}
   >
     <Header />

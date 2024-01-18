@@ -1,7 +1,7 @@
-import { usePathname } from 'next/navigation';
 import { FC } from 'react';
+import { usePathname } from 'next/navigation';
+import NextLink from 'next/link';
 import { Button } from '@mantine/core';
-import { Link } from 'components';
 
 import { RoutePath } from 'routes';
 
@@ -18,20 +18,16 @@ const ShopButton: FC<Props> = ({ label, path }) => {
   const isActive = pathname === RoutePath[path];
 
   return (
-    <Link
+    <Button
+      component={NextLink}
       href={RoutePath[path]}
-      type="router"
-      underline={false}
+      c={isActive ? 'black' : 'asphalt.8'}
+      color={isActive ? 'asphalt' : 'asphalt.8'}
+      variant={isActive ? 'filled' : 'subtle'}
+      radius="xl"
     >
-      <Button
-        c={isActive ? 'black' : 'asphalt.8'}
-        color={isActive ? 'asphalt' : 'asphalt.8'}
-        variant={isActive ? 'filled' : 'subtle'}
-        radius="xl"
-      >
-        {label}
-      </Button>
-    </Link>
+      {label}
+    </Button>
   );
 };
 

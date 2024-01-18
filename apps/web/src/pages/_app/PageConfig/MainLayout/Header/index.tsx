@@ -1,4 +1,4 @@
-import { memo, FC } from 'react';
+import { FC } from 'react';
 import { AppShellHeader as LayoutHeader, Container } from '@mantine/core';
 
 import { accountApi } from 'resources/account';
@@ -19,7 +19,7 @@ const Header: FC = () => {
   if (!account) return null;
 
   return (
-    <LayoutHeader withBorder={false}>
+    <LayoutHeader withBorder={false} style={{ zIndex: 100 }}>
       <Container className={classes.header} mih={70} px={48} py={0} display="flex" fluid>
         <Link type="router" href={RoutePath.Marketplace} underline={false}>
           <LogoImage />
@@ -31,4 +31,4 @@ const Header: FC = () => {
   );
 };
 
-export default memo(Header);
+export default Header;

@@ -33,4 +33,14 @@ module.exports = {
     prependData: '@import "./_mantine.scss";',
   },
   transpilePackages: ['types', 'schemas', 'app-constants'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'platinumlist.net',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
 };

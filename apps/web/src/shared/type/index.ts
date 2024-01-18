@@ -4,3 +4,8 @@ export interface Product {
   price: number,
   imgUrl: string
 }
+
+export interface Buyings extends Product {
+  count: number,
+  purhaseDate?: Date
+}

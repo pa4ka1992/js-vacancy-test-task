@@ -1,40 +1,54 @@
-import { FC, useState } from 'react';
-import { Button, Card, Group, Text, Title, Image, Stack } from '@mantine/core';
+import { FC, ReactNode } from 'react';
+import { Card, Group, Text, Title, Stack, Box } from '@mantine/core';
 
 import { Product } from 'shared';
+import { Image } from 'components/shared';
 
 type Props = {
-  product: Product
+  product: Product,
+  topSlot?: ReactNode,
+  bottomSlot?: ReactNode,
+  children: ReactNode
 };
 
-const ProductCard: FC<Props> = ({ product: { title, price, imgUrl } }) => {
-  const [isInCart, setIsInCart] = useState(false);
+const ProductCard: FC<Props> = (
+  { product: { title, price, imgUrl }, topSlot, bottomSlot, children },
+) => (
+  <Card padding="none" withBorder radius="lg">
+    <Box pos="relative">
+      <Image src={imgUrl} alt="product" height={218} width={318} w={318} />
 
-  return (
-    <Card padding="none" withBorder>
-      <Image src={imgUrl} h={218} w={318} fit="contain" />
+      {topSlot && (
+        <Box pos="absolute" top={20} right={20}>
+          {topSlot}
+        </Box>
+      )}
 
-      <Stack p="xs" gap={0}>
-        <Title mb={12} order={3}>
-          {title}
-        </Title>
+      {bottomSlot && (
+        <Box pos="absolute" bottom={20} right={20}>
+          {bottomSlot}
+        </Box>
+      )}
+    </Box>
 
-        <Group justify="space-between" mb={22}>
-          <Text fz={14} c="asphalt.8">
-            Price:
-          </Text>
-          <Text fw={700}>
-            $
-            {price}
-          </Text>
-        </Group>
+    <Stack p="xs" gap={0}>
+      <Title mb={12} order={3}>
+        {title}
+      </Title>
 
-        <Button radius={8} onClick={() => setIsInCart(!isInCart)}>
-          {isInCart ? 'Add to Cart' : 'In Cart'}
-        </Button>
-      </Stack>
-    </Card>
-  );
-};
+      <Group justify="space-between" mb={22}>
+        <Text fz={14} c="asphalt.8">
+          Price:
+        </Text>
+        <Text fw={700}>
+          $
+          {price}
+        </Text>
+      </Group>
+
+      {children}
+    </Stack>
+  </Card>
+);
 
 export default ProductCard;

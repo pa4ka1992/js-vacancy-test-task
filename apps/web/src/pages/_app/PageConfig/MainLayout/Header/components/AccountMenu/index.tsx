@@ -1,6 +1,6 @@
 import { FC } from 'react';
+import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useRouter } from 'next/router';
 import { Button, Group, Indicator } from '@mantine/core';
 
 import { accountApi } from 'resources/account';
@@ -12,21 +12,21 @@ import classes from './index.module.scss';
 
 const AccountMenu: FC = () => {
   const pathname = usePathname();
-  const router = useRouter();
   const { mutate: signOut } = accountApi.useSignOut();
 
-  const isActive = pathname === RoutePath.Cart;
+  const isActive = pathname.includes(RoutePath.Cart);
 
   return (
     <Group gap="xl" align="center">
       <Indicator offset={10} inline label="14" size={25}>
         <Button
+          component={NextLink}
+          href={RoutePath.Cart}
           h="auto"
           classNames={classes}
           c={isActive ? 'main-blue' : 'asphalt.9'}
           color="asphalt.8"
           variant="subtle"
-          onClick={() => router.push(RoutePath.Cart)}
         >
           <CartIcon />
         </Button>

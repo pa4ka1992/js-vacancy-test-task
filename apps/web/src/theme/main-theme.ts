@@ -9,7 +9,7 @@ const mainTheme = createTheme({
     fontFamily: 'Inter, sans-serif',
     sizes: {
       h1: { fontSize: '36px', fontWeight: '700', lineHeight: '34px' },
-      h2: { fontSize: '29px', fontWeight: '700', lineHeight: '36px' },
+      h2: { fontSize: '24px', fontWeight: '700', lineHeight: '36px' },
       h3: { fontSize: '20px', fontWeight: '700', lineHeight: '20px' },
       h4: { fontSize: '18px', fontWeight: '700', lineHeight: '20px' },
       h5: { fontSize: '16px', fontWeight: '700', lineHeight: '20px' },
