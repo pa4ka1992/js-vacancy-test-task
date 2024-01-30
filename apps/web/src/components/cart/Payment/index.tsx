@@ -15,7 +15,7 @@ type Props = {
 
 const Payment: FC<Props> = ({ img, alt, title, description }) => (
   <Stack mt={104} align="center">
-    <Image src={img} alt={alt} w={56} />
+    <Image src={img} alt={alt} width={56} height={56} />
 
     <Title order={2} fw={600}>{title}</Title>
     <Text fz="sm" ta="center" c="asphalt.9">

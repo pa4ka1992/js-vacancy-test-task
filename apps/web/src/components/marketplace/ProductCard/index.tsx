@@ -1,22 +1,25 @@
 import { FC, ReactNode } from 'react';
-import { Card, Group, Text, Title, Stack, Box } from '@mantine/core';
+import { Card, Group, Text, Title, Box } from '@mantine/core';
 
 import { Product } from 'shared';
 import { Image } from 'components/shared';
+import { ProductImgSize } from './constants';
 
 type Props = {
   product: Product,
+  variant: keyof typeof ProductImgSize,
   topSlot?: ReactNode,
   bottomSlot?: ReactNode,
-  children: ReactNode
+  children?: ReactNode
 };
 
 const ProductCard: FC<Props> = (
-  { product: { title, price, imgUrl }, topSlot, bottomSlot, children },
+  { product: { title, price, imgUrl }, topSlot, bottomSlot, variant, children },
 ) => (
-  <Card padding="none" withBorder radius="lg">
-    <Box pos="relative">
-      <Image src={imgUrl} alt="product" height={218} width={318} w={318} />
+  <Card withBorder radius="lg">
+    <Card.Section pos="relative">
+
+      <Image src={imgUrl} alt="product" width={ProductImgSize[variant][0]} height={ProductImgSize[variant][1]} />
 
       {topSlot && (
         <Box pos="absolute" top={20} right={20}>
@@ -29,25 +32,24 @@ const ProductCard: FC<Props> = (
           {bottomSlot}
         </Box>
       )}
-    </Box>
+    </Card.Section>
 
-    <Stack p="xs" gap={0}>
-      <Title mb={12} order={3}>
-        {title}
-      </Title>
+    <Title mt="xs" order={3}>
+      {title}
+    </Title>
 
-      <Group justify="space-between" mb={22}>
-        <Text fz={14} c="asphalt.8">
-          Price:
-        </Text>
-        <Text fw={700}>
-          $
-          {price}
-        </Text>
-      </Group>
+    <Group justify="space-between" mt={12} mb={children ? 22 : 0}>
+      <Text fz={14} c="asphalt.8">
+        Price:
+      </Text>
+      <Text fw={700}>
+        $
+        {price}
+      </Text>
+    </Group>
 
-      {children}
-    </Stack>
+    {children}
+
   </Card>
 );
 

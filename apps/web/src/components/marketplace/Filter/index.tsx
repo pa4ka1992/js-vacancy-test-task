@@ -5,7 +5,7 @@ import { IconX } from '@tabler/icons-react';
 import classes from './index.module.scss';
 
 const Filter: FC = () => (
-  <Paper p="md" bg="pure-white" withBorder maw="315px">
+  <Paper p="md" withBorder maw="315px">
     <Group align="center" justify="space-between">
       <Title order={3}>Filters</Title>
 

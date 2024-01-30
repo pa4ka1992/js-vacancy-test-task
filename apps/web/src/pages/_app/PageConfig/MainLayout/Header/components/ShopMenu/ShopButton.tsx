@@ -15,7 +15,7 @@ type Props = {
 const ShopButton: FC<Props> = ({ label, path }) => {
   const pathname = usePathname();
 
-  const isActive = pathname === RoutePath[path];
+  const isActive = pathname.includes(RoutePath[path]);
 
   return (
     <Button

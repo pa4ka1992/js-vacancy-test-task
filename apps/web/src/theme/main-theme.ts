@@ -10,7 +10,7 @@ const mainTheme = createTheme({
     sizes: {
       h1: { fontSize: '36px', fontWeight: '700', lineHeight: '34px' },
       h2: { fontSize: '24px', fontWeight: '700', lineHeight: '36px' },
-      h3: { fontSize: '20px', fontWeight: '700', lineHeight: '20px' },
+      h3: { fontSize: '20px', fontWeight: '600', lineHeight: '20px' },
       h4: { fontSize: '18px', fontWeight: '700', lineHeight: '20px' },
       h5: { fontSize: '16px', fontWeight: '700', lineHeight: '20px' },
     },
@@ -53,19 +53,6 @@ const mainTheme = createTheme({
       '#0948A9',
       '#053989',
     ],
-    'pure-white': [
-      '#FFFFFF',
-      '#FFFFFF',
-      '#FFFFFF',
-      '#FFFFFF',
-      '#FFFFFF',
-      '#FFFFFF',
-      '#FFFFFF',
-      '#FFFFFF',
-      '#FFFFFF',
-      '#FFFFFF',
-      '#FFFFFF',
-    ],
     asphalt: [
       '#FCFCFC',
       '#FCFCFC',
@@ -82,7 +69,6 @@ const mainTheme = createTheme({
   primaryShade: 6,
   components,
   black: '#201F22',
-  white: '#FCFCFC',
 });
 
 export default mainTheme;

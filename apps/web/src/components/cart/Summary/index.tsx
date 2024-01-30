@@ -14,7 +14,7 @@ const Summary: FC<Props> = ({ totalPrice }) => {
   const router = useRouter();
 
   return (
-    <Paper pos="sticky" top={95} p="md" mt={-40} miw={315} withBorder bg="pure-white" style={{ zIndex: 95 }}>
+    <Paper pos="sticky" top={95} p="md" mt={-40} miw={315} withBorder style={{ zIndex: 95 }}>
       <Stack>
         <Title order={3}>Summary</Title>
 

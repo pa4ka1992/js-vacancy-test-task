@@ -30,11 +30,6 @@ const Search: FC = () => {
             <IconX />
           </UnstyledButton>
         ) : null}
-        styles={{
-          input: {
-            backgroundColor: 'var(--mantine-color-pure-white-filled)',
-          },
-        }}
       />
     </Skeleton>
 

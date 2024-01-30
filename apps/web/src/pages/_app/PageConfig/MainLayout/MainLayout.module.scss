@@ -1,12 +1,12 @@
 .root {
   min-height: 100vh;
-  background-color: var(--mantine-color-white);
+  background-color: var(--mantine-color-body);
 
   display: flex;
   flex-direction: column;
 }
 
 .main {
-  padding: rem(32px);
-  padding-top: rem(80px);
+  padding: rem(48px);
+  padding-top: rem(100px);
 }

@@ -8,8 +8,10 @@ type Props = ImageProps & {
   height?: number
 };
 
-const Image: FC<Props> = (props) => (
-  <MantineImage component={NextImage} {...props} quality={100} />
-);
+const Image: FC<Props> = (props) => {
+  const { width, height } = props;
+
+  return <MantineImage component={NextImage} {...props} quality={100} w={width} h={height} />;
+};
 
 export default Image;

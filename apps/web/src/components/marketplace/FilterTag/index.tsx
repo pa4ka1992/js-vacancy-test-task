@@ -5,7 +5,7 @@ import { IconX } from '@tabler/icons-react';
 type Props = { label: string };
 
 const FilterTag: FC<Props> = ({ label }) => (
-  <Paper bg="pure-white" withBorder radius="xl" px="md" py={10} color="white" c="black">
+  <Paper withBorder radius="xl" px="md" py={10} color="white" c="black">
     <Group gap={8}>
       <Text fz="xs" fw="500">
         {label}

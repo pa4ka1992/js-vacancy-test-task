@@ -1,0 +1,14 @@
+.root {
+  min-width: rem(250px);
+  min-height: rem(271px);
+  border: 1px solid var(--mantine-color-gray-3);
+  background-color: var(--mantine-color-white);
+
+  &:hover {
+    background-color: var(--mantine-color-main-blue-light-hover);
+  }
+}
+
+.box {
+  border-radius: 100%;
+}
