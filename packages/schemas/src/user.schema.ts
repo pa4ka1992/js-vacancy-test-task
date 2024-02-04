@@ -22,4 +22,5 @@ export const userSchema = dbSchema.extend({
   }).optional(),
 
   lastRequest: z.date().optional(),
+  productIds: z.array(z.string()).default([]),
 }).strict();
